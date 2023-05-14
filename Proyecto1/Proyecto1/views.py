@@ -16,6 +16,8 @@ def saludo(request):   ##primera vista
     
     # apellido = 'Hendler'
 
+    temas_curso =  ['plantillas', 'despliege', 'cursos']
+
     ahora = datetime.datetime.now()
 
     
@@ -25,7 +27,7 @@ def saludo(request):   ##primera vista
     
     doc_externo.close()
     
-    ctx = Context({'nombre_persona':p1.nombre, 'apellido_persona': p1.apellido, 'fecha_ahora': ahora})
+    ctx = Context({'nombre_persona':p1.nombre, 'apellido_persona': p1.apellido, 'fecha_ahora': ahora, 'temas': temas_curso})
     
     documento = plt.render(ctx)
     

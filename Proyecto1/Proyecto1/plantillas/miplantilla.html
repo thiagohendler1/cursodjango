@@ -12,9 +12,24 @@
     Hola esta estamos viendo la plantilla desde un html
     </h1>
 <p>
-    El nombre del profesor es: {{nombre_persona}} {{apellido_persona}}
+    El nombre del profesor es: {{nombre_persona.upper}} {{apellido_persona.upper}}
     <br>
     La fecha y hora actual es: {{fecha_ahora.day}} / {{fecha_ahora.month}} / {{fecha_ahora.year}}  
+</p>
+<p><strong>Temas del curso: </strong></p>
+
+<p>
+    <ul>
+    {% if temas %}
+        {% for elTema in temas %}
+
+            <li>{{elTema}}</li>
+
+        {% endfor %}
+        {% else %}
+            <li>No hay temas en este curso</li>
+    {% endif %}
+    </ul>
 </p>
 
 </body>
