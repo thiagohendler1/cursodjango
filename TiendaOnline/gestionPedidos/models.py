@@ -20,6 +20,9 @@ class Articulos(models.Model):
     precio = models.IntegerField()
                 ##Con este campo solo se van a poder introducir números enteros. 
 
+    def __str__(self):
+        return f'El nombre es {self.nombre} - la sección es {self.seccion} - el precio es {self.precio}'
+    
 class Pedidos(models.Model):
     numero = models.IntegerField()
 
