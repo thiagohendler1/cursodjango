@@ -2,6 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.template import loader
+from django.shortcuts import render
 
 class Persona(object):
 
@@ -32,13 +33,15 @@ def saludo(request):   ##primera vista
     '''
     #Con los cargadores::
     
-    doc_externo = loader.get_template('miplantilla.html')
+    #doc_externo = loader.get_template('miplantilla.html')
     
     #ctx = Context({'nombre_persona':p1.nombre, 'apellido_persona': p1.apellido, 'fecha_ahora': ahora, 'temas': temas_curso})
     
-    documento = doc_externo.render({'nombre_persona':p1.nombre, 'apellido_persona': p1.apellido, 'fecha_ahora': ahora, 'temas': temas_curso})
+    #documento = doc_externo.render({'nombre_persona':p1.nombre, 'apellido_persona': p1.apellido, 'fecha_ahora': ahora, 'temas': temas_curso})
     
-    return HttpResponse(documento)
+    #return HttpResponse(documento)
+
+    return render(request, 'miplantilla.html', {'nombre_persona':p1.nombre, 'apellido_persona': p1.apellido, 'fecha_ahora': ahora, 'temas': temas_curso})
 
 def despedida(request):
     return HttpResponse('Chau!')
