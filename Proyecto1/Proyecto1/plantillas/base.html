@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+    <title>
+
+<!-- con esto le decimos a este archivo que lo que está dentro del title puede cambiar -->
+        {% block title %}{% endblock %}  
+
+    </title>
+
+</head>
+
+<body>
+
+    <h1 style="background-color: aquamarine; color:rgb(0, 0, 0); text-align:center">Thiago Hendler</h1>
+    
+<!-- Este elemento me agrega la barra de navegación creada anteriormente::     -->
+    {% include "superior/barra.html" %}
+    
+    <h3>Rutas de aprendizaje, emprendimiento y desarrollo personal</h3>
+
+    {% block content %}{% endblock %}
+
+    <p style="background-color: aquamarine; color:rgb(0, 0, 0); text-align:right">Esfuérzate y cambia el mundo! Gracias por su visita | Thiago Hendler | 2023</p>
+
+</body>
+
+
+</html>

@@ -43,6 +43,19 @@ def saludo(request):   ##primera vista
 
     return render(request, 'miplantilla.html', {'nombre_persona':p1.nombre, 'apellido_persona': p1.apellido, 'fecha_ahora': ahora, 'temas': temas_curso})
 
+
+def cursoC(request):
+    
+    fecha_actual = datetime.datetime.now()
+    
+    return render(request, 'cursoC.html', {'dameFecha': fecha_actual})
+
+def cursoCss(request):
+    
+    fecha_actual = datetime.datetime.now()
+    
+    return render(request, 'cursoCss.html', {'dameFecha': fecha_actual})
+
 def despedida(request):
     return HttpResponse('Chau!')
 

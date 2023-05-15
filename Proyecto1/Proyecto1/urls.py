@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Proyecto1.views import saludo , despedida, dameFecha, calculaEdad ##Importamos la def del otro archivo
+from Proyecto1.views import saludo , despedida, dameFecha, calculaEdad, cursoC, cursoCss ##Importamos la def del otro archivo
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +23,6 @@ urlpatterns = [
     path('despedida/', despedida),
     path('Fecha/', dameFecha),
     path('edades/<int:edad>/<int:agno>', calculaEdad),
+    path('cursoC/', cursoC),
+    path('cursoCss/', cursoCss),
 ]
