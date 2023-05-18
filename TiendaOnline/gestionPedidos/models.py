@@ -8,10 +8,13 @@ class Clientes(models.Model):
 
     direccion = models.CharField(max_length=50)
 
-    email = models.EmailField()
+    email = models.EmailField(blank=True, null=True) ##Con estos dos últimos parámetros hacemos que sea un campo opcional
                 ##Con este campo solo se van a poder introducir direcciones de email válidas.
     
     tfno = models.CharField(max_length=7)
+    
+    def __str__(self):
+        return f"Nombre: {self.nombre} - Dirección: {self.direccion} - Email: {self.email} - Tfno: {self.tfno}"
 
 class Articulos(models.Model):
     nombre = models.CharField(max_length=30)
@@ -31,3 +34,6 @@ class Pedidos(models.Model):
     
     entregado = models.BooleanField()
                     ##Con este campo se van a poder ingresar solo True o False.
+    
+    def __str__(self):
+        return f"Número de pedido: {self.numero} - Fecha: {self.fecha} - Entregado: {self.entregado}"
