@@ -6,7 +6,8 @@ class Clientes(models.Model):
     nombre = models.CharField(max_length=30)
                 ##CharField == Para utilizar texto y DEBEMOS PASARLE UN PARÁMETRO
 
-    direccion = models.CharField(max_length=50)
+    direccion = models.CharField(max_length=50, verbose_name='La Dirección')
+                                #Este último parámetro se utiliza para modificar el nombre con el que aparece en el admin este campo
 
     email = models.EmailField(blank=True, null=True) ##Con estos dos últimos parámetros hacemos que sea un campo opcional
                 ##Con este campo solo se van a poder introducir direcciones de email válidas.
@@ -14,7 +15,7 @@ class Clientes(models.Model):
     tfno = models.CharField(max_length=7)
     
     def __str__(self):
-        return f"Nombre: {self.nombre} - Dirección: {self.direccion} - Email: {self.email} - Tfno: {self.tfno}"
+        return self.nombre
 
 class Articulos(models.Model):
     nombre = models.CharField(max_length=30)
