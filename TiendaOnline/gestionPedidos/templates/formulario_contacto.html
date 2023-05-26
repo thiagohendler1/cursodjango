@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>Contáctanos</h1>
+
+    <!-- Aquí ponemos un if por las dudas de que hayan errores: -->
+    {% if form.errors %}
+    <p style="color: red">Por favor revisa este campo</p>
+    {% endif %}
+
+    <!-- creamos el formulario -->
+    <form action="" method="POST">{% csrf_token %}
+        <!-- #llamamos al formulario con la key-value de la def en el arcivho views.py. Y lo expresamos con un table.  -->
+        <table>
+            {{ form.as_table }}  
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
